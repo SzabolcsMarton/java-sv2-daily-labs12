@@ -34,7 +34,7 @@ public class RunningManagger {
                 sum += actual.getKm();
             }
         }
-        return sum;
+        return Math.floor(sum * 100) / 100;
     }
 
     private Run createRunObjectFromLine(String line){
