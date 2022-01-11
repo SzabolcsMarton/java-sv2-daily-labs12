@@ -29,9 +29,9 @@ class RunningManaggerTest {
     void sumOfRunsPerDate(){
         RunningManagger runningManagger = new RunningManagger();
         runningManagger.readAllLines("src/test/resources/running.csv");
-//
-//       assertEquals(7.1, runningManagger.sumOfRunsPerDate(2021, Month.NOVEMBER));
-//       assertEquals(41.2, runningManagger.sumOfRunsPerDate(2021, Month.DECEMBER));
+
+        assertEquals(7.1, runningManagger.sumOfRunsPerDate(2021, Month.NOVEMBER));
+        assertEquals(41.2, runningManagger.sumOfRunsPerDate(2021, Month.DECEMBER));
         assertEquals(25.9, runningManagger.sumOfRunsPerDate(2022, Month.JANUARY));
     }
 
