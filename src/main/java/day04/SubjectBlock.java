@@ -1,5 +1,7 @@
 package day04;
 
+import java.util.Objects;
+
 public class SubjectBlock {
 
     private String name;
@@ -29,6 +31,29 @@ public class SubjectBlock {
     public int getLessonNumber() {
         return lessonNumber;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        SubjectBlock that = (SubjectBlock) o;
+
+        if (lessonNumber != that.lessonNumber) return false;
+        if (!name.equals(that.name)) return false;
+        if (!subject.equals(that.subject)) return false;
+        return gradeAndClass.equals(that.gradeAndClass);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + subject.hashCode();
+        result = 31 * result + gradeAndClass.hashCode();
+        result = 31 * result + lessonNumber;
+        return result;
+    }
+
 
     @Override
     public String toString() {
